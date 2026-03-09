@@ -125,6 +125,18 @@ function Header() {
                     return false
                 }
 
+                if (/[a-zA-Z]/.test(data.telefono)) {
+                    Swal.showValidationMessage("El telefono no puede tener letras.")
+                    return false
+                }
+
+                if (/[a-zA-Z]/.test(data.telefono)) {
+                    Swal.showValidationMessage("La edad no puede tener letras.")
+                    return false
+                }
+
+                
+
                 return data
             }
         })

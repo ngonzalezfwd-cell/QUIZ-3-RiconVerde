@@ -26,6 +26,16 @@ function Login() {
             return
         }
 
+        if (/[a-zA-Z]/.test(contraseña)) {
+            Swal.fire({
+                icon: "error",
+                title: "Contraseña inválida",
+                text: "La contraseña no puede contener letras.",
+                confirmButtonColor: "#2E4630"
+            })
+            return
+        }
+
         const usuarios = await UserServices.GetUsuarios()
 
         const usuario = usuarios.find(u => u.correo === correo && (u.contraseña === contraseña || u.contraseña === contraseña))

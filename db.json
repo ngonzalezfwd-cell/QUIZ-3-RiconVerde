@@ -5,14 +5,18 @@
       "nombre": "Naomy Gonzalez",
       "correo": "gnaomy276@gmail.com",
       "contraseña": "12345678",
-      "rol": "admin"
+      "rol": "admin",
+      "edad": "43",
+      "genero": "Masculino",
+      "telefono": "55555555",
+      "imagenPerfil": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
     },
     {
-      "id": "1773067841616",
+      "id": "1773069711914",
       "nombre": "Naomy",
-      "edad": "43",
+      "edad": "32",
       "genero": "Femenino",
-      "telefono": "55555555",
+      "telefono": "444444444",
       "correo": "ngonzalezfwd@gmail.com",
       "contraseña": "12345678",
       "imagenPerfil": "",
@@ -55,7 +59,7 @@
       "nombre": "Marihuana",
       "descripcion": "Majestuosa presencia tropical con hojas profundamente fenestradas.",
       "precio": 4000,
-      "stock": 0,
+      "stock": 3,
       "categoria": "Exterior"
     }
   ],
@@ -90,6 +94,25 @@
       ],
       "total": 285000,
       "fecha": "2026-03-09T14:51:41.340Z",
+      "estado": "nuevo",
+      "visto": true
+    },
+    {
+      "id": "pedido_1773069857181",
+      "usuarioId": "1773069711914",
+      "usuarioNombre": "Naomy",
+      "usuarioCorreo": "ngonzalezfwd@gmail.com",
+      "items": [
+        {
+          "id": "plantaZamioculca",
+          "nombre": "Zamioculca Zamiifolia",
+          "cantidad": 2,
+          "precio": 28000,
+          "subtotal": 56000
+        }
+      ],
+      "total": 56000,
+      "fecha": "2026-03-09T15:24:17.181Z",
       "estado": "nuevo",
       "visto": true
     }

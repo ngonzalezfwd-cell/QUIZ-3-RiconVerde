@@ -95,6 +95,16 @@ function Registro() {
             return
         }
 
+        if (/[a-zA-Z]/.test(telefono)) {
+            Swal.fire({
+                icon: "warning",
+                title: "Teléfono inválido",
+                text: "El teléfono no puede contener letras.",
+                confirmButtonColor: "#184425"
+            })
+            return
+        }
+
         if (telefono < 0) {
             Swal.fire({
                 icon: "warning",
@@ -110,6 +120,16 @@ function Registro() {
                 icon: "warning",
                 title: "Correo inválido",
                 text: "El correo debe contener @ y .",
+                confirmButtonColor: "#184425"
+            })
+            return
+        }
+
+        if (/[a-zA-Z]/.test(contraseña)) {
+            Swal.fire({
+                icon: "warning",
+                title: "Contraseña inválida",
+                text: "La contraseña no puede contener letras.",
                 confirmButtonColor: "#184425"
             })
             return

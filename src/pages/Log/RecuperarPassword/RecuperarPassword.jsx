@@ -62,7 +62,7 @@ function RecuperarPassword() {
                 templateParams,
                 'public_key' // Reemplaza con tu Public Key
             )
-            
+
             Swal.fire({
                 icon: "success",
                 title: "¡Correo enviado!",
@@ -85,7 +85,7 @@ function RecuperarPassword() {
 
     const verificarCodigo = (e) => {
         if (e) e.preventDefault()
-        
+
         if (codigoIngresado.trim().toUpperCase() === codigoEnviado) {
             Swal.fire({
                 icon: "success",
@@ -114,6 +114,16 @@ function RecuperarPassword() {
                 icon: "error",
                 title: "Campo vacío",
                 text: "Por favor ingresa una nueva contraseña.",
+                confirmButtonColor: "#2E4630"
+            })
+            return
+        }
+
+        if (/[a-zA-Z]/.test(nuevaPassword)) {
+            Swal.fire({
+                icon: "error",
+                title: "Contraseña inválida",
+                text: "La contraseña no puede contener letras.",
                 confirmButtonColor: "#2E4630"
             })
             return
@@ -149,12 +159,12 @@ function RecuperarPassword() {
                             </p>
                             <div className="entrada">
                                 <label>Correo Electrónico</label>
-                                <input 
-                                    type="email" 
-                                    value={correo} 
-                                    onChange={(e) => setCorreo(e.target.value)} 
-                                    placeholder="tu@correo.com" 
-                                    required 
+                                <input
+                                    type="email"
+                                    value={correo}
+                                    onChange={(e) => setCorreo(e.target.value)}
+                                    placeholder="tu@correo.com"
+                                    required
                                 />
                             </div>
                             <button type="button" className="botonPrimario anchoTotal" onClick={enviarCodigo}>
@@ -170,12 +180,12 @@ function RecuperarPassword() {
                             </p>
                             <div className="entrada">
                                 <label>Código de Recuperación</label>
-                                <input 
-                                    type="text" 
-                                    value={codigoIngresado} 
-                                    onChange={(e) => setCodigoIngresado(e.target.value)} 
-                                    placeholder="Ej: AB1295" 
-                                    required 
+                                <input
+                                    type="text"
+                                    value={codigoIngresado}
+                                    onChange={(e) => setCodigoIngresado(e.target.value)}
+                                    placeholder="Ej: AB1295"
+                                    required
                                 />
                             </div>
                             <button type="button" className="botonPrimario anchoTotal" onClick={verificarCodigo}>
@@ -191,12 +201,12 @@ function RecuperarPassword() {
                             </p>
                             <div className="entrada">
                                 <label>Nueva Contraseña</label>
-                                <input 
-                                    type="password" 
-                                    value={nuevaPassword} 
-                                    onChange={(e) => setNuevaPassword(e.target.value)} 
-                                    placeholder="••••••••" 
-                                    required 
+                                <input
+                                    type="password"
+                                    value={nuevaPassword}
+                                    onChange={(e) => setNuevaPassword(e.target.value)}
+                                    placeholder="••••••••"
+                                    required
                                 />
                             </div>
                             <button type="button" className="botonPrimario anchoTotal" onClick={cambiarPassword}>
