@@ -1,0 +1,195 @@
+.espaciadoSuperior {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    min-height: 90vh;
+}
+
+.encabezadoPanel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.encabezadoPanel h1 {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.pestañasAdmin {
+    display: flex;
+    gap: 12px;
+    background: white;
+    padding: 8px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.pestañasAdmin button {
+    background: transparent;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    color: #64748b;
+    transition: var(--transicion-suave);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pestañasAdmin button:hover {
+    color: var(--color-bosque);
+    background: #f1f5f9;
+}
+
+.pestañasAdmin button.activa {
+    background: var(--gradiente-bosque);
+    color: white;
+    box-shadow: 0 8px 20px rgba(27, 67, 50, 0.2);
+}
+
+.contenidoPanel {
+    padding: 50px;
+    border-radius: 40px;
+    background: white;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.tituloTabla {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.tituloTabla h2 {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.tablaAdmin {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    text-align: left;
+}
+
+.tablaAdmin th {
+    padding: 20px;
+    font-weight: 800;
+    color: #94a3b8;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.tablaAdmin td {
+    padding: 20px;
+    background: #f8fafc;
+    border: none;
+    transition: var(--transicion-suave);
+}
+
+.tablaAdmin td:first-child {
+    border-radius: 16px 0 0 16px;
+}
+
+.tablaAdmin td:last-child {
+    border-radius: 0 16px 16px 0;
+}
+
+.tablaAdmin tbody tr {
+    transition: var(--transicion-suave);
+}
+
+.tablaAdmin tbody tr:hover td {
+    background-color: #f1f5f9;
+    transform: scale(1.01);
+}
+
+.imgMini {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 3px solid white;
+}
+
+.etiquetaRol {
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+}
+
+.etiquetaRol.admin {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.etiquetaRol.user {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.btnIcono {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    color: var(--color-bosque);
+    padding: 10px;
+    border-radius: 12px;
+    transition: var(--transicion-suave);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnIcono:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btnIcono.eliminar {
+    color: #ef4444;
+}
+
+.btnIcono.eliminar:hover {
+    background: #fff1f2;
+    border-color: #fecaca;
+}
+
+@media (max-width: 900px) {
+    .tablaAdmin {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .encabezadoPanel {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contenidoPanel {
+        padding: 30px 20px;
+    }
+
+    .encabezadoPanel h1 {
+        font-size: 36px;
+    }
+}

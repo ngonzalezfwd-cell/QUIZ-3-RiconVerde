@@ -1,0 +1,123 @@
+#piePagina {
+    background-color: var(--color-bosque);
+    color: white;
+}
+
+.seccionEspaciado {
+    padding: 60px 0;
+}
+
+
+.piePaginaContenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+    text-align: left;
+}
+
+@media (max-width: 900px) {
+    .piePaginaContenido {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .piePaginaContenido {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+}
+
+.infoMarca .logotipo {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 16px;
+    color: var(--color-marfil);
+}
+
+.descripcionFooter {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.redesSociales {
+    display: flex;
+    justify-content: left;
+    gap: 30px;
+}
+
+.redesSociales a {
+    color: var(--color-exito);
+    text-decoration: none;
+    transition: var(--transicion-suave);
+    margin-left: 20px;
+}
+
+.redesSociales a svg{
+    width: 40px;
+    height: 25px;
+}
+
+.redesSociales a:hover {
+    color: white;
+    transform: translateY(-10px);
+}
+
+.footer-columna h3 {
+    margin-bottom: 32px;
+    font-size: 22px;
+    color: var(--color-marfil);
+    font-family: var(--fuente-secundaria);
+}
+
+.footer-columna ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-columna li {
+    margin-bottom: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+}
+
+.enlacesRapidos a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: var(--transicion-suave);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.enlacesRapidos a:hover {
+    color: var(--color-exito);
+    padding-left: 20px;
+}
+
+.listaContacto li {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.listaContacto li span {
+    font-weight: 600;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.derechos {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+    margin-top: 20px;
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.05em;
+}

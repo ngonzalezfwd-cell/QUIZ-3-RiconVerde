@@ -1,0 +1,93 @@
+.listaNavegacion {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+}
+
+.enlaces {
+    text-decoration: none;
+    color: var(--color-bosque-oscuro);
+    font-size: 17px;
+    font-weight: 600;
+    transition: var(--transicion-suave);
+    position: relative;
+    opacity: 0.7;
+    font-family: var(--fuente-primaria);
+    letter-spacing: 0.01em;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.enlaces::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--color-bosque);
+    transition: var(--transicion-suave);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.enlaces:hover {
+    color: var(--color-bosque);
+    opacity: 1;
+    transform: translateY(-2px);
+    background: rgba(45, 106, 79, 0.05);
+}
+
+.enlaces:hover::after {
+    width: 20px;
+}
+
+.enlaces.active {
+    opacity: 1;
+    color: var(--color-bosque);
+}
+
+.enlaces.active::after {
+    width: 20px;
+}
+
+.Login {
+    background: var(--gradiente-bosque);
+    border-radius: 50px;
+    padding: 12px 28px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    transition: var(--transicion-suave);
+    position: relative;
+    font-family: var(--fuente-primaria);
+    box-shadow: 0 4px 15px rgba(27, 67, 50, 0.2);
+}
+
+.Login:hover {
+    background: var(--gradiente-aurora);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(27, 67, 50, 0.3);
+}
+
+.Login:active {
+    transform: translateY(-1px);
+}
+
+.boton-link {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 850px) {
+    .listaNavegacion {
+        display: none;
+        /* Consider setting up a mobile menu if needed, but for now we follow general polish */
+    }
+}

@@ -1,0 +1,331 @@
+@keyframes entradaSuave {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes fondoAnimado {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes flotacion {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    33% {
+        transform: translateY(-30px) rotate(5deg);
+    }
+
+    66% {
+        transform: translateY(15px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.contenedorLogin {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: linear-gradient(-45deg, #081c15, #1b4332, #2d6a4f, #081c15);
+    background-size: 400% 400%;
+    animation: fondoAnimado 15s ease infinite;
+    margin-top: 0;
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 950;
+    /* Debajo de modales de Swal y Header */
+}
+
+/* Formas decorativas animadas en el fondo */
+.contenedorLogin::before,
+.contenedorLogin::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(82, 183, 136, 0.15) 0%, transparent 70%);
+    filter: blur(40px);
+    z-index: -1;
+    animation: flotacion 20s ease-in-out infinite;
+}
+
+.contenedorLogin::before {
+    top: -100px;
+    left: -100px;
+}
+
+.contenedorLogin::after {
+    bottom: -100px;
+    right: -100px;
+    animation-delay: -5s;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+}
+
+.tarjetaAuth {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    padding: 50px;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+    animation: entradaSuave 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    max-height: 95vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-bosque) transparent;
+}
+
+#paginaRegistro .tarjetaAuth {
+    max-width: 850px;
+    padding: 50px 40px;
+}
+
+.tarjetaAuth h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: 800;
+    font-family: var(--fuente-secundaria);
+    background: var(--gradiente-bosque);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.botonVolver {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+
+    color: var(--color-bosque);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px 15px;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: var(--transicion-suave);
+    z-index: 10;
+}
+
+.botonVolver:hover {
+    transform: translateX(-5px);
+    background: var(--color-marfil);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.formularioAuth {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#formularioRegistro {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+.datosPersonales,
+.datosCuenta {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 0 30px;
+}
+
+.divisorVertical {
+    width: 2px;
+    align-self: stretch;
+    background: linear-gradient(to bottom, transparent, rgba(27, 67, 50, 0.1), transparent);
+    margin: 0 10px;
+}
+
+.entrada {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.entrada label {
+    font-weight: 700;
+    color: var(--color-bosque-oscuro);
+    font-size: 14px;
+    margin-left: 4px;
+}
+
+.entrada input,
+.entrada select {
+    padding: 14px 20px;
+    border-radius: 12px;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    background: #fdfdfd;
+    transition: var(--transicion-suave);
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--color-pizarra);
+}
+
+.entrada input:focus,
+.entrada select:focus {
+    outline: none;
+    border-color: var(--color-bosque);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(27, 67, 50, 0.05);
+    transform: translateY(-2px);
+}
+
+.anchoTotal {
+    width: 100%;
+    margin-top: 10px;
+    padding: 16px !important;
+    font-size: 18px !important;
+}
+
+/* --- DISEÑO TEXTO CAMBIO --- */
+.textoCambio {
+    text-align: center;
+    margin-top: 35px;
+    padding: 18px;
+    font-size: 15px;
+    background: rgba(82, 183, 136, 0.08);
+    border-radius: 20px;
+    color: var(--color-bosque-oscuro);
+    transition: var(--transicion-suave);
+    border: 1px dashed rgba(27, 67, 50, 0.2);
+}
+
+.textoCambio:hover {
+    background: rgba(82, 183, 136, 0.12);
+    transform: scale(1.02);
+}
+
+.textoCambio a {
+    color: var(--color-bosque-brillante);
+    font-weight: 800;
+    text-decoration: none;
+    margin-left: 8px;
+    transition: var(--transicion-suave);
+    display: inline-block;
+}
+
+.textoCambio a:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+/* --- SELECTOR DE AVATAR --- */
+.contenedorAvatarRegistro {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.labelAvatarRegistro {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 4px solid white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transition: var(--transicion-suave);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.labelAvatarRegistro:hover {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--color-bosque);
+    box-shadow: 0 20px 40px rgba(27, 67, 50, 0.25);
+}
+
+.imgAvatarRegistro {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.placeholderAvatarRegistro {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--color-bosque);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.placeholderAvatarRegistro svg {
+    margin-bottom: 4px;
+}
+
+/* Ocultar barra de scroll en navegadores basados en webkit */
+.tarjetaAuth::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+@media (max-width: 900px) {
+    #formularioRegistro {
+        flex-direction: column;
+    }
+
+    .divisorVertical {
+        display: none;
+    }
+
+    .datosPersonales,
+    .datosCuenta {
+        padding: 0;
+        width: 100%;
+    }
+
+    .tarjetaAuth {
+        padding: 40px 20px;
+        max-height: 90vh;
+        margin: 20px;
+    }
+}
